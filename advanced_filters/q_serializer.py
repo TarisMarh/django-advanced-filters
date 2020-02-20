@@ -3,9 +3,13 @@ from datetime import datetime, date
 import base64
 import time
 
-from django.utils import six
 from django.db.models import Q
 from django.core.serializers.base import SerializationError
+
+try:
+    from django.utils import six
+except ImportError:
+    import six
 
 import simplejson as json
 
